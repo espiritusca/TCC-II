@@ -1,0 +1,398 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    width: 100vw;
+    font-family: "Roboto", sans-serif;
+}
+
+/*  LADO ESQUERDO*/
+
+.left-box {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 19.9%;
+    height: 100vh;
+    background-color: white;
+    border-right: 1px solid #e8e8e8;
+    align-items: center;
+}
+
+.left-box .logo {
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 8%;
+    background-image: linear-gradient(to right, #324b98ff, #6cbaff);
+    font-size: 40px;
+    border-radius: 20px 0 0 0;
+    width: 100%;
+}
+
+.left-box .logo img {
+    width: 50px;
+    padding-left: 10px;
+}
+
+.left-box .menu {
+    height: 100%;
+    width: 100%;
+    padding-left: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+}
+
+.left-box .menu div {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    font-weight: 300;
+    margin-top: 15px;
+}
+
+.left-box .menu div img, span {
+    padding-left: 30px;
+    margin: 10px 0;
+}
+
+
+
+.menu div:hover {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    width: 100%;
+    background-color: #6cbaff;
+    border-radius: 6px 0 0 6px;
+}
+
+/*  LADO DIREITO    */
+
+.right-box {
+    position: absolute;
+    right: 0;
+    width: 80%;
+    height: 100vh;
+    
+}
+
+.right-box header {
+    display: flex;
+    position: fixed;
+    width: 100%;
+    height: 8%;
+    background-color: white;
+    box-shadow: 5px 0 10px rgba(0, 0, 0, .2);
+}
+
+.right-box header img {
+    width: 30px;
+}
+
+.right-box header .menu-notify {
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+    border-right: 1px solid #e8e8e8;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+.right-box header .profile {
+    display: flex;
+    width: 40%;
+    padding-left: 20px;
+}
+
+.right-box header .profile span {
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
+}
+
+/* CONTENT BOX*/
+
+input[type="number"]::-webkit-outer-spin-button, /*RETIRA SETA DO CAMPO DE NUMERO (IDADE)*/
+        input[type="number"]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+.right-box section {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 91%;
+    background-color: white;
+}
+
+.right-box .content-box {
+    display: none;
+    height: 100%;
+}
+
+.content-box.active {
+    display: block;
+}
+
+.content-box h2 {
+    color: #324b98ff;
+    padding-left: 50px;
+    padding-top: 20px;
+    font-size: 30px;
+    font-weight: 400;
+}
+
+.content-box p {
+    padding-top: 15px;
+    padding-left: 50px;
+}
+
+/* LISTA DE ESPERA*/
+
+.wlBoxes {
+    display: flex;
+    width: 100%;
+}
+
+.wlBoxes .box {
+    border-radius: 8px;
+    width: 300px;
+    height: 250px;
+    margin: 25px 25px;
+    box-shadow: 1px 1px 20px rgba(0, 0, 0, .2);
+}
+
+.box:hover {
+    cursor: pointer;
+    filter: brightness(0.9);
+}
+
+.box:hover .acess {
+    text-decoration: underline;
+}
+
+.box .icon-color {
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+    background-image: linear-gradient(to top, #324b98ff, #6cbaff);
+    height: 30%;
+    border-radius: 8px 8px 0 0;
+}
+
+.icon-color img {
+    width: 50px;
+}
+
+.box .text {
+    padding-left: 20px;
+    padding-top: 30px;
+    height: 50%;
+    border-radius: 0 0 8px 8px;
+    font-size: 18px;
+    letter-spacing: -1px;
+    color: #324b98ff;
+}
+
+.box .acess {
+    display: flex;
+    height: 20%;
+    align-items: center;
+    justify-content: center;
+    padding-right: 50px;
+    color: #0779eb;
+}
+
+.acess img {
+    width: 30px;
+}
+
+/* BOTÃO VOLTAR LISTA DE ESPERA */
+.back {
+    display: flex;
+    height: 50px;
+    width: 100px;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: none;
+    color: #0779eb;
+    font-size: 20px;
+    margin: 20px 0  0 90px;
+}
+
+.back img {
+    width: 30px;
+}
+
+.back span {
+    margin-left: -25px;
+}
+
+.back:hover {
+    cursor: pointer;
+    box-shadow: inset 0px -1px 0px #324b98ff;
+}
+
+/* NOVO REGISTRO LISTA DE ESPERA */
+
+#newRegisterWaitingList #waitingListRegister {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    margin: 0 0 0 100px;
+}
+
+#waitingListRegister .dataWaitingList {
+    position: relative;
+    width: 100%;
+    margin-top: 20px
+}
+
+.dataWaitingList label {
+    position: absolute;
+    top: -10px;
+    left: 15px;
+    padding: 0 5px;
+    background-color: white;
+}
+
+.dataWaitingList input {
+    padding: 10px 15px;
+    border: 2px solid #e8e8e8;
+    border-radius: 8px;
+    outline: none;
+    width: 100%;
+}
+
+#waitingListRegister .availability {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    padding: 15px 15px 10px;
+    border: 2px solid #e8e8e8;
+    border-radius: 8px;
+}
+
+.availability .label-check {
+    position: absolute;
+    top: -10px;
+    left: 15px;
+    padding: 0 5px;
+    background-color: white;
+}
+
+#waitingListRegister input:hover, textarea:hover, .availability:hover {
+    border: 2px solid #b6b6b6;
+}
+
+.availability label:not(.label-check):hover, .availability input:hover {
+    cursor: pointer;
+}
+
+#waitingListRegister input:focus, textarea:focus {
+    border: 2px solid #324b98ff;
+}
+
+textarea { 
+    padding-top: 15px;  
+    width: 100%; 
+    height: 150px;        
+    border: 2px solid #e8e8e8;
+    border-radius: 8px;
+    resize: none;     
+    outline: none;
+}
+
+#waitingListRegister button {
+    height: 50px;
+    margin-top: 20px;
+    border-radius: 8px;
+    border: 2px solid;
+    background-color: #324b98ff;
+    color: #ffffff;
+    font-size: 20px;    
+}
+
+#waitingListRegister button:hover {
+    cursor: pointer;
+    filter: brightness(1.2);
+}
+
+/* VISUALIZAR LISTA DE ESPERA */
+
+#viewWaitingList .waitingPatientListContainer {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 80%;
+    margin: 10px 0 0 100px;
+    border-top: 2px solid #324b98ff;
+    overflow: scroll;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.waitingPatientListContainer .waitingPatient {
+    width: 100%;
+    border-bottom: solid 2px #324b98ff;
+    border-left: solid 2px transparent;
+    border-right: solid 2px transparent;
+    padding: 10px;
+}
+
+.waitingPatient:hover {
+    border-left: solid 2px #324b98ff;
+    border-right: solid 2px #324b98ff;
+}
+
+.waitingPatient .nameID {
+    background-color: transparent;
+}
+
+.waitingPatient img {
+    width: 20px;
+    margin-bottom: -4px;
+}
+
+.waitingPatient .agePhoneAvailability {
+    display: flex;
+    align-items: center;
+}
+
+.agePhoneAvailability span {
+    margin: 5px 55px 0 0;
+}
+
+.waitingPatient .whatsObsEdit{
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+}
+
+.whatsObsEdit button {
+    margin: 5px 20px 0 0;
+    font-size: 18px;
+    color: #324b98ff;
+    border: none;
+    padding: 5px 5px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.whatsObsEdit button:hover {
+    cursor: pointer;
+    background-color: rgb(146, 189, 255);
+}
