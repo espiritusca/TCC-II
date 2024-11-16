@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="left-box">
+
+        <div class="logo">
+            <span>Clínica</span>
+            <img src="img/brain.svg" alt="Logo">
+        </div>
+
+        <nav class="menu">
+
+            <div onclick="showContent('home')">
+                <img src="img/bxs-right-arrow.svg" alt="menu">
+                <span>Início</span>
+            </div>
+
+            <div onclick="showContent('appointments')">
+                <img src="img/bxs-right-arrow.svg" alt="menu">
+                <span>Agendamentos</span>
+            </div>
+
+            <div onclick="showContent('waitingList')">
+                <img src="img/bxs-right-arrow.svg" alt="menu">
+                <span>Lista de Espera</span>
+            </div>
+
+            <div onclick="showContent('activePatient')">
+                <img src="img/bxs-right-arrow.svg" alt="menu">
+                <span>Pacientes Ativos</span>
+            </div>
+
+        </nav>
+
+    </div>
+    <div class="right-box">
+        <header>
+
+            <div class="menu-notify">
+                <img src="img/bx-menu.svg" alt="Menu">
+                <img src="img/bxs-bell.svg" alt="Notificações">
+            </div>
+
+            <div class="profile">
+                <img src="img/bxs-face.svg" alt="">
+                <span>
+                    <label>Nome Sobrenome</label>
+                </span>
+            </div>
+
+        </header>
+
+        <section>
+            <!-- INÍCIO -->
+            <div id="home" class="content-box">
+                <h2>Início</h2>
+            </div>
+            <!-- AGENDAMENTOS -->
+            <div id="appointments" class="content-box">
+                <h2>Agendamentos</h2>
+            </div>
+            <!-- LISTA DE ESPERA -->
+            <div id="waitingList" class="content-box">
+
+                <h2>Lista de Espera</h2>
+                <p>Utilize os atalhos abaixo para selecionar a opção desejada.</p>
+
+                <div class="wlBoxes">
+
+                    <div class="box" onclick="showContent('newRegisterWaitingList')">
+                        <div class="icon-color">
+                            <img src="img/plus-large-svgrepo-com.svg" alt="Novo">
+                        </div>
+                        <div class="text">
+                            <h3>Novo Cadastro</h3>
+                        </div>
+                        <div class="acess">
+                            <span>Acessar</span>
+                            <img src="img/right-arrow-svgrepo-com.svg" alt="Acessar">
+                        </div>
+                    </div>
+
+                    <div class="box" onclick="showContent('viewWaitingList')">
+                        <div class="icon-color">
+                            <img src="img/eye-svgrepo-com.svg" alt="Visualizar">
+                        </div>
+                        <div class="text">
+                            <h3>Visualizar Lista de Espera</h3>
+                        </div>
+                        <div class="acess">
+                            <span>Acessar</span>
+                            <img src="img/right-arrow-svgrepo-com.svg" alt="Acessar">
+                        </div>
+                    </div>
+    
+                </div>
+
+            </div>
+            <!-- :::::::::::::::::::LISTA DE ESPERA -> NOVO REGISTRO: -->
+            <div id="newRegisterWaitingList" class="content-box">
+                <h2>Novo Registro na Lista de Espera</h2>
+
+                <button class="back" onclick="goBack('waitingList')">
+                    <img src="img/back-svgrepo-com.svg" alt="Voltar">
+                    <span>Voltar</span>
+                </button>
+
+                <form id="waitingListRegister">
+                    
+                    <div class="dataWaitingList">
+                        <label>Nome</label><input id="nome" type="text"><br>
+                    </div>
+                    <div class="dataWaitingList">
+                        <label>Idade</label><input id="idade" type="number"><br>
+                    </div>
+                    <div class="dataWaitingList">
+                        <label>Responsável</label><input type="text"><br>
+                    </div>
+                    <div class="dataWaitingList">
+                        <label>Contato</label><input id="contato" type="tel"><br>
+                    </div>
+                    <div class="availability">
+                        <label class="label-check">Disponibilidade</label>
+                        <label><input type="checkbox"> Manhã</label>
+                        <label><input type="checkbox"> Tarde</label>
+                        <label><input type="checkbox"> Noite</label>
+                    </div>
+                    <div class="dataWaitingList">    
+                        <label>Observação</label><textarea></textarea><br>
+                    </div>
+                    
+                    <button type="submit">Salvar</button>
+                    
+                </form>
+
+            </div>
+            <!-- :::::::::::::::::::LISTA DE ESPERA -> VISUALIZAR LISTA DE ESPERA: -->
+            <div id="viewWaitingList" class="content-box">
+                <h2>Candidatos</h2>
+
+                <button class="back" onclick="goBack('waitingList')">
+                    <img src="img/back-svgrepo-com.svg" alt="Voltar">
+                    <span>Voltar</span>
+                </button>
+
+                <div id="wPL"  class="waitingPatientListContainer">
+                    <!--
+                    <div id="waitingPatient">
+                        <div class="nameID">
+                            <span>#1 -</span>
+                            <span>Paciente</span>
+                        </div>
+                        <div class="agePhoneAvailability">
+                            <span>Idade</span>
+                            <span>
+                                <img src="img/phone-svgrepo-com.svg" alt="Telefone">
+                                4215468484
+                            </span>
+                            <span>
+                                <input type="checkbox" disabled checked>Manhã
+                                <input type="checkbox" disabled checked>Tarde
+                            </span>
+                        </div>
+                        <div class="whatsObsEdit">
+                            <button>
+                                <img src="img/whatsapp-whats-app-svgrepo-com.svg" alt="Enviar Mensagem">
+                                Enviar Mensagem
+                            </button>
+                            <button>
+                                <img src="img/info-square-svgrepo-com.svg" alt="Observações">
+                                Observações
+                            </button>
+                            <button>
+                                <img src="img/edit-svgrepo-com.svg" alt="Editar">
+                                Editar
+                            </button>
+                        </div>
+                    </div>
+                    -->
+                </div>
+            </div>
+            <!-- PACIENTES ATIVOS -->
+            <div id="activePatient" class="content-box">
+                <h2>Pacientes Ativos</h2>
+            </div>
+
+        </section>
+    </div>
+   
+    <script src="main.js"></script>
+</body>
+</html>
